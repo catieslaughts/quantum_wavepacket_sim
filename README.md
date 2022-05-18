@@ -71,7 +71,7 @@ A step barrier at x = 0 of height pot_h. Note that the step option does not make
 
 #### Double well: 
 	
-Two "square" barriers centered around x = 0, each of width 2*dx and height pot_h. The inner edges of the barriers are a distance pot_w*dx apart
+Two "square" barriers centered around x = 0, each of width 2\*dx and height pot_h. The inner edges of the barriers are a distance pot_w\*dx apart
 
 #### Custom:
 	
