@@ -4,21 +4,22 @@
 
 ## Description
 
-	A numerical code to simulate quantum wavepacket propagation through various potential barriers
+A numerical code to simulate quantum wavepacket propagation through various potential barriers
 
 ## Dependencies
 
-	This code uses a few relatively basic packages that should be easily installable via your preferred python package management method (conda, pip, etc.)
-	- numpy
-	- matplotlib
-	- scipy 
-	- tqdm
-	- os
+This code uses a few relatively basic packages that should be easily installable via your preferred python package management method (conda, pip, etc.)
+- numpy
+- matplotlib
+- scipy 
+- tqdm
+- os
 
 ## Usage
 
-	The easiest way to run this simulation code is through the provided wrapper (run_simulation.py). This piece of code allows the user to change input parameter values, and pick which pieces of code to be run. 
-	The available input parameters are:
+The easiest way to run this simulation code is through the provided wrapper (run_simulation.py). This piece of code allows the user to change input parameter values, and pick which pieces of code to be run. 
+
+### The available input parameters are:
 
 - Simulation properties:
 	- tmax (scalar): the number of timesteps in the simulation
