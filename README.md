@@ -20,28 +20,28 @@
 	The easiest way to run this simulation code is through the provided wrapper (run_simulation.py). This piece of code allows the user to change input parameter values, and pick which pieces of code to be run. 
 	The available input parameters are:
 
--Simulation properties:
+- Simulation properties:
 	- tmax (scalar): the number of timesteps in the simulation
     - dt (scalar): the size of timesteps
     - xmax (scalar): the size of the x-axis to be simulated, the code centers the x-axis at zero, so xmax = 200 results in x = [-100,100]
     - dx (scalar): the spacing of the x-grid
 
--Wavepacket properties:
+- Wavepacket properties:
 	- sigma0 (scalar): the width of your Gaussian wavepacket
     - x0 (scalar): the initial center of your wavepacket
     - k0 (scalar): the momentum of the wavepacket
 
--Potential properties:
+- Potential properties:
 	- pot_h (list of scalars): the height(s) of the potential barrier
     - pot_w (list of scalars): the width(s) of the potential barrier, in units of dx
     - pot_shape (string): the shape of the potential barrier
 
--Animation properties:
+- Animation properties:
 	- wavepacket (boolean): whether the user would like the wavepacket plotted in the animation
     - real (boolean): whether the user would like the real part of psi plotted in the animation
     - imaginary (boolean): whether the user would like the imaginary part of psi plotted in the animation
 
--Wrapper options:
+- Wrapper options:
 	- run_sim (boolean): to run the simulation with the given parameters
 	- animate (boolean): to create an animation based on output files with given parameters
 	- datadir (str): the directory that simulation data is saved to and pulled from, directory is created by the code if it doesn't already exist
