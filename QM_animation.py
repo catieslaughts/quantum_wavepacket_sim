@@ -48,7 +48,7 @@ def set_up_fig():
 	global wp, psi_real, psi_imag, legend
 
 	fig, ax = plt.subplots()
-	ax.set_ylim(-.5,.5)
+	ax.set_ylim(-1.2,1.2)
 	ax.set_xlim(int(.75*x_array.min()), int(.75*x_array.max()))
 	ax.plot(x_array,pot_array, c='grey', linestyle = 'dashed', label = 'Potential') #plots potential on all frames
 	
@@ -118,6 +118,6 @@ def run_animation():
 			print('Animating')
 			ani = animation.FuncAnimation(fig, animate, frames = psi_array.shape[0], interval=30, blit=True, repeat = True)
 			
-			#ani.save(anidir+'ani_h{}_w{}_{}.gif'.format(height, width, pot_shape), writer=writer) #saves animation as gif
-			#print('Animation Saved')
+			ani.save(anidir+'ani_h{}_w{}_{}.gif'.format(height, width, pot_shape)) #saves animation as gif
+			print('Animation Saved')
 			plt.show()

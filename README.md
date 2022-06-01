@@ -76,4 +76,4 @@ Two "square" barriers centered around x = 0, each of width 2\*dx and height pot_
 #### Custom:
 	
 Should the user want to study the effects of a different potential shape on the movement of a quantum wavepacket, the option exists to hard-code their own.
-Where marked in QM_wavepacket_model.py (around line 80), simply set the variable pot equal to some array of equal length to x_pos. By default and as an example, we have input a sine wave potential here
+Where marked in QM_wavepacket_model.py (around line 80), simply set the variable pot equal to some array of equal length to x_pos. As an example, we have input a sine wave potential here

@@ -64,7 +64,7 @@ def create_pot(x_pos, height, width):
         pot[start:stop] = height
         
     elif pot_shape == 'triangle':
-        pot[start:stop] = height - 2*height/width*x_pos[start:stop]
+        pot[start:stop] = height/2 - (height/width)*x_pos[start:stop]
         
     elif pot_shape == 'gaussian':
         pot = height*gaussian(xmax/dx, width)
@@ -138,6 +138,12 @@ def coefficients(xmax, psi_new, dx, height, width):
 def run_system():
     """To run the simulation."""
     print('Running Sim')
+    
+    coeff_file = open(datadir+'coeffs_{}_#h{}_#w{}.csv'.format(pot_shape, len(pot_h), len(pot_w)), 'w' )
+    coeff_file.write('#Height,Width,Reflection,Transmission\n')
+    coeff_file.close()
+    coeff_file = open(datadir+'coeffs_{}_#h{}_#w{}.csv'.format(pot_shape, len(pot_h), len(pot_w)).format(pot_shape), 'a' )
+    
     for height in pot_h: #iterate over input potential heights and widths
         for width in pot_w:
         	print('Height: '+str(height))
@@ -149,11 +155,17 @@ def run_system():
         		psi_new[i] = update_system(psi_new[i-1], hamiltonian) #step system, save new wavefunction
         		if i == int(tmax/dt)-1:
         			R_coeff, T_coeff = coefficients(xmax, psi_new[i], dx, height, width) #calculates reflection and transmission
-        	print("reflection"+str(R_coeff))
-        	print("transmission"+str(T_coeff))
+        	print("Reflection: "+str(R_coeff))
+        	print("Transmission: "+str(T_coeff))
+        	
+        	#coeffs_save = np.asarray([R_coeff, T_coeff])
+        	
+        	coeff_file.write('{},{},{},{}\n'.format(height, width, R_coeff, T_coeff))
         	np.savetxt(datadir+'psi_h{}_w{}_{}.txt'.format(height, width, pot_shape), psi_new) #saves data
         	np.savetxt(datadir+'pot_h{}_w{}_{}.txt'.format(height, width, pot_shape), potential)
         	np.savetxt(datadir+'xaxis_{}.txt'.format(xmax), x_pos)
         	print('Data saved')
+        	
+    coeff_file.close()
 
 
